@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  microsservice:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+
+  mongo_db:
+    image: mongo:4.0.5
+    restart: always
+    ports:
+      - 27017:27017
